@@ -1,0 +1,393 @@
+/* securityme — security monitor UI */
+
+:root {
+  --bg: #F5F5F2;
+  --surface: #FFFFFF;
+  --text: #1A1A1A;
+  --text-secondary: #6B6B6B;
+  --accent: #4A6B8A;
+  --accent-light: #E4EBF2;
+  --border: #E0E0DC;
+  --radius: 12px;
+  --max-width: 720px;
+
+  --high-color: #8B3A3A;
+  --high-bg: #F5E0E0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1A1A1A;
+    --surface: #242424;
+    --text: #E8E8E4;
+    --text-secondary: #9B9B9B;
+    --accent: #7BA8D4;
+    --accent-light: #2A3A4A;
+    --border: #333333;
+
+    --high-color: #D47B7B;
+    --high-bg: #3A2020;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 60px 24px 32px;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+header .meta {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-left: 8px;
+}
+
+.page-nav {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.page-nav a {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.page-nav a.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
+  font-weight: 500;
+}
+
+.page-nav a:hover {
+  color: var(--text);
+}
+
+/* Tag filter bar */
+
+.tag-filter {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tag-btn {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 300;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tag-btn.active {
+  background: var(--text-secondary);
+  color: var(--bg);
+  border-color: var(--text-secondary);
+}
+
+.tag-btn:not(.active):hover {
+  border-color: var(--text-secondary);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--text-secondary);
+}
+
+.empty code {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Section titles */
+
+.section-title {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Audio briefing */
+
+.audio-briefing {
+  margin-bottom: 24px;
+}
+
+.audio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.audio-header .section-title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.btn-play {
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--text-secondary);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-play:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+/* Article cards */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-compact {
+  padding: 16px 24px;
+}
+
+.card-compact h2 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+/* High relevance card */
+
+.card-high {
+  border-left: 3px solid var(--high-color);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.relevance-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--high-color);
+  background: var(--high-bg);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.card h2 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.card h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.card h2 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.source-reason {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 4px;
+}
+
+.source-reason .reason {
+  font-style: italic;
+  color: var(--text);
+}
+
+/* Source label colors */
+
+.src-label {
+  font-weight: 500;
+}
+
+.src-label[data-source="GI-TOC"] { color: #5B8DBE; }
+.src-label[data-source="OCCRP"] { color: #C47B78; }
+.src-label[data-source="InSight Crime"] { color: #C4782A; }
+.src-label[data-source="Europol"] { color: #2D5F8A; }
+.src-label[data-source="EMCDDA/EUDA"] { color: #4A8B6E; }
+.src-label[data-source="RUSI"] { color: #8B6B4A; }
+.src-label[data-source="Chatham House"] { color: #6B5B8A; }
+.src-label[data-source="Carnegie Europe"] { color: #8B5B5B; }
+.src-label[data-source="ECFR"] { color: #5B8B6B; }
+.src-label[data-source="Crisis Group"] { color: #C47B78; }
+.src-label[data-source="SIPRI"] { color: #7B8B5B; }
+.src-label[data-source="EUISS"] { color: #2D5F8A; }
+.src-label[data-source="Real Instituto Elcano"] { color: #8B6B4A; }
+.src-label[data-source="CIDOB"] { color: #5B7B8B; }
+.src-label[data-source="IEEE"] { color: #4A6B5B; }
+.src-label[data-source*="El País"] { color: #888888; }
+.src-label[data-source="El Mundo"] { color: #1A9CA0; }
+.src-label[data-source="El Confidencial"] { color: #5B8DBE; }
+.src-label[data-source="eldiario.es"] { color: #7BAFD4; }
+
+@media (prefers-color-scheme: dark) {
+  .src-label[data-source="GI-TOC"] { color: #7CB0E0; }
+  .src-label[data-source="OCCRP"] { color: #D4918E; }
+  .src-label[data-source="InSight Crime"] { color: #E8A84C; }
+  .src-label[data-source="Europol"] { color: #5B9BD5; }
+  .src-label[data-source="EMCDDA/EUDA"] { color: #6BC49E; }
+  .src-label[data-source="RUSI"] { color: #C4A06B; }
+  .src-label[data-source="Chatham House"] { color: #9B8BC4; }
+  .src-label[data-source="Carnegie Europe"] { color: #C48B8B; }
+  .src-label[data-source="ECFR"] { color: #8BC4A0; }
+  .src-label[data-source="Crisis Group"] { color: #D4918E; }
+  .src-label[data-source="SIPRI"] { color: #A0C48B; }
+  .src-label[data-source="EUISS"] { color: #5B9BD5; }
+  .src-label[data-source="Real Instituto Elcano"] { color: #C4A06B; }
+  .src-label[data-source="CIDOB"] { color: #8BB0C4; }
+  .src-label[data-source="IEEE"] { color: #6BA08B; }
+  .src-label[data-source*="El País"] { color: #AAAAAA; }
+  .src-label[data-source="El Mundo"] { color: #2CC4C8; }
+  .src-label[data-source="El Confidencial"] { color: #7CB0E0; }
+  .src-label[data-source="eldiario.es"] { color: #94C8E8; }
+}
+
+/* Footer */
+
+footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+}
+
+/* iPad-specific tweaks */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    padding-top: 48px;
+  }
+
+  .card {
+    padding: 28px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 8px;
+  }
+}
+
+/* Safe area for notched devices */
+
+@supports (padding: env(safe-area-inset-top)) {
+  header {
+    padding-top: calc(60px + env(safe-area-inset-top));
+  }
+
+  footer {
+    padding-bottom: calc(48px + env(safe-area-inset-bottom));
+  }
+}
