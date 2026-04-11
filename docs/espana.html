@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>securityme — España</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header>
+    <h1>securityme <span class="meta">11 Apr 2026, 11:08</span></h1>
+    <nav class="page-nav">
+      <a href="index.html">Europa</a>
+      <a href="espana.html" class="active">España</a>
+    </nav>
+  </header>
+
+  <!-- Tag filter bar -->
+  <nav class="tag-filter" id="tagFilter">
+    <button class="tag-btn active" data-tag="all" onclick="filterTag('all')">todo</button>
+  </nav>
+
+  <main>
+    
+    <section class="audio-briefing">
+      <div class="audio-header">
+        <h2 class="section-title">Briefing de hoy</h2>
+        <button class="btn-play" id="playBtn" onclick="toggleAudio()">Escuchar</button>
+      </div>
+      <audio id="briefingAudio" src="briefing.mp3" preload="none"></audio>
+    </section>
+    
+
+    
+
+    
+    <section>
+      <h2 class="section-title">Monitor de seguridad — España</h2>
+      
+      <article class="card card-compact card-high" data-tag="terrorismo">
+        <div class="card-header">
+          <span class="tag">terrorismo</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://elpais.com/espana/2026-04-09/josu-ternera-afronta-en-paris-el-ultimo-juicio-que-condiciona-su-entrega-a-espana.html" target="_blank" rel="noopener">Josu Ternera niega haber sido jefe de ETA en el juicio en París que condiciona su entrega a España</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="El País (España)">El País (España)</span>
+           &middot; Daniel Verdú
+          &middot; <span class="reason">El juicio de Josu Ternera en París condiciona la cooperación judicial europea en casos de terrorismo y marca precedentes para futuras extradiciones de exmiembros de ETA.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact" data-tag="terrorismo">
+        <div class="card-header">
+          <span class="tag">terrorismo</span>
+          
+        </div>
+        <h2>
+          <a href="https://elpais.com/espana/2026-04-10/la-fiscalia-se-opone-al-regimen-de-semilibertad-concedido-a-anboto.html" target="_blank" rel="noopener">La Fiscalía se opone a la semilibertad de la exjefa de ETA ‘Anboto’ por prematura</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="El País (España)">El País (España)</span>
+           &middot; Óscar López-Fonseca
+          &middot; <span class="reason">La oposición fiscal a la semilibertad de 'Anboto' refleja tensiones en la aplicación de políticas penitenciarias para terroristas y el cumplimiento efectivo de condenas.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="terrorismo">
+        <div class="card-header">
+          <span class="tag">terrorismo</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.elmundo.es/espana/2026/04/10/69d95d4821efa077108b45a5.html" target="_blank" rel="noopener">El Partido Socialista da la 'semilibertad' a dos etarras cada mes desde mayo y la Fiscalía alerta de un "quebranto grave del sistema"</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="El Mundo">El Mundo</span>
+           &middot; Daniel Gómez-Fontecha, Manuel Marraco
+          &middot; <span class="reason">La concesión sistemática de semilibertad a etarras por parte del PSOE vasco genera un conflicto institucional que debilita el sistema penitenciario antiterrorista.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="terrorismo">
+        <div class="card-header">
+          <span class="tag">terrorismo</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.elmundo.es/espana/2026/04/10/69d8e689fdddff3f658b458a.html" target="_blank" rel="noopener">La Fiscalía se opone al tercer grado "encubierto" de la ex dirigente etarra Anboto y considera "especialmente grave" la actuación del Gobierno vasco</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="El Mundo">El Mundo</span>
+           &middot; Manuel Marraco
+          &middot; <span class="reason">La crítica fiscal al tercer grado de Anboto sin motivación reforzada expone deficiencias procedimentales graves en el tratamiento penitenciario de terroristas.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="corrupción">
+        <div class="card-header">
+          <span class="tag">corrupción</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.eldiario.es/politica/sombra-corrupcion-policial-segundo-tunel-ceuta-agentes-pagados-venden-droga_1_13122228.html" target="_blank" rel="noopener">La sombra de la corrupción policial tras el segundo túnel de Ceuta: "Sin agentes pagados ni nos venden la droga"</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="eldiario.es">eldiario.es</span>
+           &middot; Andrés Illescas
+          &middot; <span class="reason">El segundo túnel de Ceuta revela la penetración de redes de narcotráfico en estructuras policiales, comprometiendo la integridad de las fuerzas de seguridad fronteriza.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact" data-tag="terrorismo">
+        <div class="card-header">
+          <span class="tag">terrorismo</span>
+          
+        </div>
+        <h2>
+          <a href="https://www.eldiario.es/politica/fiscalia-francesa-pide-expulsion-pais-josu-ternera-cinco-anos-carcel-no-tendria-cumplir_1_13134043.html" target="_blank" rel="noopener">La Fiscalía francesa pide la expulsión del país de Josu Ternera y cinco años de cárcel que no tendría que cumplir</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="eldiario.es">eldiario.es</span>
+           &middot; EFE
+          &middot; <span class="reason">La solicitud francesa de expulsión de Josu Ternera cierra un ciclo judicial europeo y facilita su eventual entrega a España para cumplir condenas pendientes.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="corrupción">
+        <div class="card-header">
+          <span class="tag">corrupción</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.eldiario.es/politica/empresaria-carmen-pano-reitera-supremo-entrego-90-000-euros-sede-psoe-indicacion-aldama_1_13129850.html" target="_blank" rel="noopener">La empresaria Carmen Pano reitera en el Supremo que entregó 90.000 euros en la sede del PSOE por indicación de Aldama</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="eldiario.es">eldiario.es</span>
+           &middot; Javier Lillo, Elena Herrera
+          &middot; <span class="reason">El testimonio de Pano ante el Supremo sobre entregas de dinero en el PSOE refuerza la trama de corrupción sistémica en el caso Ábalos-Aldama.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact" data-tag="geopolítica">
+        <div class="card-header">
+          <span class="tag">geopolítica</span>
+          
+        </div>
+        <h2>
+          <a href="https://www.realinstitutoelcano.org/comentarios/alemania-nueva-potencia-militar-de-europa/" target="_blank" rel="noopener">Alemania, nueva potencia militar de Europa</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="Real Instituto Elcano">Real Instituto Elcano</span>
+           &middot; Jesús A. Núñez Villaverde
+          &middot; <span class="reason">El rearme alemán transforma el equilibrio de poder militar europeo y redefine las dinámicas de seguridad continental ante las amenazas rusas.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="ciberseguridad">
+        <div class="card-header">
+          <span class="tag">ciberseguridad</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.realinstitutoelcano.org/analisis/no-basta-con-el-escudo-necesitamos-la-espada-la-obtencion-de-capacidades-ofensivas-para-el-ciberespacio/" target="_blank" rel="noopener">No basta con el escudo, necesitamos la espada: la obtención de capacidades ofensivas para el ciberespacio</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="Real Instituto Elcano">Real Instituto Elcano</span>
+           &middot; Enrique Cubeiro Cabello, Antonio Villalón Huerta.
+          &middot; <span class="reason">El desarrollo de capacidades cibernéticas ofensivas responde a la militarización del ciberespacio y la necesidad de disuasión activa frente a amenazas híbridas.</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="geopolítica">
+        <div class="card-header">
+          <span class="tag">geopolítica</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.realinstitutoelcano.org/analisis/energia-y-conflicto-en-oriente-medio-actualizacion-de-escenarios/" target="_blank" rel="noopener">Energía y conflicto en Oriente Medio: actualización de escenarios</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="Real Instituto Elcano">Real Instituto Elcano</span>
+           &middot; Félix Arteaga, Gonzalo Escribano.
+          &middot; <span class="reason">La escalada en Oriente Medio amenaza la seguridad energética global y requiere una reevaluación de los escenarios de riesgo para el suministro europeo.</span>
+        </p>
+      </article>
+      
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>securityme &middot; monitor de seguridad curado con Claude</p>
+  </footer>
+
+  <script>
+  // Build tag filter from actual tags on page
+  (function() {
+    const tags = new Set();
+    document.querySelectorAll('.card[data-tag]').forEach(c => tags.add(c.dataset.tag));
+    const bar = document.getElementById('tagFilter');
+    [...tags].sort().forEach(tag => {
+      const btn = document.createElement('button');
+      btn.className = 'tag-btn';
+      btn.dataset.tag = tag;
+      btn.textContent = tag;
+      btn.onclick = () => filterTag(tag);
+      bar.appendChild(btn);
+    });
+  })();
+
+  function filterTag(tag) {
+    document.querySelectorAll('.tag-btn').forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+    document.querySelectorAll('.card[data-tag]').forEach(card => {
+      card.style.display = (tag === 'all' || card.dataset.tag === tag) ? '' : 'none';
+    });
+  }
+
+  function toggleAudio() {
+    const audio = document.getElementById('briefingAudio');
+    const btn = document.getElementById('playBtn');
+    if (!audio) return;
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = 'Pausar';
+    } else {
+      audio.pause();
+      btn.textContent = 'Escuchar';
+    }
+    audio.onended = () => { btn.textContent = 'Escuchar'; };
+  }
+  </script>
+</body>
+</html>

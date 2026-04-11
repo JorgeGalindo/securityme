@@ -1,5 +1,316 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>securityme</title></head>
-<body><h1>securityme</h1><p>El monitor se actualizará con el primer cron nocturno o ejecución manual del workflow.</p></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>securityme — Europa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header>
+    <h1>securityme <span class="meta">11 Apr 2026, 11:07</span></h1>
+    <nav class="page-nav">
+      <a href="index.html" class="active">Europa</a>
+      <a href="espana.html">España</a>
+    </nav>
+  </header>
+
+  <!-- Tag filter bar -->
+  <nav class="tag-filter" id="tagFilter">
+    <button class="tag-btn active" data-tag="all" onclick="filterTag('all')">todo</button>
+  </nav>
+
+  <main>
+    
+    <section class="audio-briefing">
+      <div class="audio-header">
+        <h2 class="section-title">Briefing de hoy</h2>
+        <button class="btn-play" id="playBtn" onclick="toggleAudio()">Escuchar</button>
+      </div>
+      <audio id="briefingAudio" src="briefing.mp3" preload="none"></audio>
+    </section>
+    
+
+    
+
+    
+    <section>
+      <h2 class="section-title">Monitor de seguridad — Europa</h2>
+      
+      <article class="card card-compact card-high" data-tag="crimen organizado">
+        <div class="card-header">
+          <span class="tag">crimen organizado</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://globalinitiative.net/analysis/berlin-europe-trend-rising-criminal-violence/" target="_blank" rel="noopener">Berlin burning: Developments in the German capital confirm a Europe-wide trend of rising criminal violence</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="GI-TOC">GI-TOC</span>
+           &middot; Claudio Landi
+          &middot; <span class="reason">La escalada de violencia criminal en Berlín refleja una tendencia europea generalizada que amenaza la estabilidad urbana</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="ciberseguridad">
+        <div class="card-header">
+          <span class="tag">ciberseguridad</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://globalinitiative.net/analysis/democratizing-cybercrime-ai-empowering-cybercriminals/" target="_blank" rel="noopener">Democratizing cybercrime: How sophisticated AI systems are empowering a new generation of cybercriminals</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="GI-TOC">GI-TOC</span>
+           &middot; Claudio Landi
+          &middot; <span class="reason">La democratización del cibercrimen mediante IA sofisticada transforma las amenazas de seguridad digital en Europa</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="política de drogas">
+        <div class="card-header">
+          <span class="tag">política de drogas</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://globalinitiative.net/analysis/a-new-geopolitical-and-drug-policy-world/" target="_blank" rel="noopener">A new geopolitical and drug policy world</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="GI-TOC">GI-TOC</span>
+           &middot; Claudio Landi
+          &middot; <span class="reason">El nuevo orden geopolítico mundial redefine las estrategias internacionales de política de drogas</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="crimen organizado">
+        <div class="card-header">
+          <span class="tag">crimen organizado</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://globalinitiative.net/analysis/arms-trafficking-dynamics-in-central-and-south-eastern-europe/" target="_blank" rel="noopener">Stemming the tide: Arms trafficking dynamics in Central and South-Eastern Europe</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="GI-TOC">GI-TOC</span>
+           &middot; Claudio Landi
+          &middot; <span class="reason">Las dinámicas de tráfico de armas en Europa Central y Sudoriental revelan nuevos patrones de criminalidad transnacional</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact" data-tag="narcotráfico">
+        <div class="card-header">
+          <span class="tag">narcotráfico</span>
+          
+        </div>
+        <h2>
+          <a href="https://insightcrime.org/news/on-the-radar-do-crackdowns-work/" target="_blank" rel="noopener">On the Radar: Do Crackdowns Work?</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="InSight Crime">InSight Crime</span>
+           &middot; InSight Crime
+          &middot; <span class="reason">La efectividad de las operaciones represivas contra el narcotráfico muestra resultados mixtos en el contexto internacional</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="narcotráfico">
+        <div class="card-header">
+          <span class="tag">narcotráfico</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://insightcrime.org/investigations/why-cocaine-keeps-flowing-through-caribbean-visual-guide/" target="_blank" rel="noopener">Why Cocaine Keeps Flowing Through the Caribbean: A Visual Guide</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="InSight Crime">InSight Crime</span>
+           &middot; Alex Papadovassilakis
+          &middot; <span class="reason">El Caribe mantiene su función estratégica como nodo principal para el tráfico de cocaína hacia Europa</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact" data-tag="narcotráfico">
+        <div class="card-header">
+          <span class="tag">narcotráfico</span>
+          
+        </div>
+        <h2>
+          <a href="https://insightcrime.org/investigations/did-us-military-strikes-impact-caribbean-drug-trafficking/" target="_blank" rel="noopener">Did US Military Strikes Impact Caribbean Drug Trafficking?</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="InSight Crime">InSight Crime</span>
+           &middot; Alex Papadovassilakis
+          &middot; <span class="reason">Los ataques militares estadounidenses impactan temporalmente las rutas caribeñas pero no alteran la estructura del tráfico</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="narcotráfico">
+        <div class="card-header">
+          <span class="tag">narcotráfico</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://insightcrime.org/news/4-things-to-know-about-brazils-pablo-escobar/" target="_blank" rel="noopener">4 Things to Know about Brazil’s ‘Pablo Escobar’</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="InSight Crime">InSight Crime</span>
+           &middot; Deborah Bonello and Christopher Newton
+          &middot; <span class="reason">El juicio del 'Pablo Escobar brasileño' en Bélgica ilustra la globalización del negocio de la cocaína</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="corrupción">
+        <div class="card-header">
+          <span class="tag">corrupción</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://insightcrime.org/news/corruption-engine-behind-sebastian-marset-empire/" target="_blank" rel="noopener">The Corruption Engine Behind Sebastián Marset’s Empire</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="InSight Crime">InSight Crime</span>
+           &middot; Christopher Newton
+          &middot; <span class="reason">La condena del senador paraguayo expone el motor de corrupción detrás del imperio de Sebastián Marset</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="crimen organizado">
+        <div class="card-header">
+          <span class="tag">crimen organizado</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.europol.europa.eu/media-press/newsroom/news/guns-for-cannabis-network-hit-europol-high-value-target-arrested-in-international-action" target="_blank" rel="noopener">Guns-for-cannabis network hit: Europol high-value target arrested in international action</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="Europol">Europol</span>
+          
+          &middot; <span class="reason">El desmantelamiento de la red armas-por-cannabis demuestra la sofisticación del crimen organizado turco-griego</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact" data-tag="crimen organizado">
+        <div class="card-header">
+          <span class="tag">crimen organizado</span>
+          
+        </div>
+        <h2>
+          <a href="https://www.europol.europa.eu/media-press/newsroom/news/major-operation-targets-one-of-scotland%E2%80%99s-most-violent-crime-networks" target="_blank" rel="noopener">Major operation targets one of Scotland’s most violent crime networks</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="Europol">Europol</span>
+          
+          &middot; <span class="reason">La operación contra redes escocesas revela el control territorial mediante violencia sistemática en Reino Unido</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="migración">
+        <div class="card-header">
+          <span class="tag">migración</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.europol.europa.eu/media-press/newsroom/news/small-boats-supply-chain-disrupted-21-arrested-for-supplying-channel-smugglers-nautical-equipment" target="_blank" rel="noopener">Small boats supply chain disrupted: 21 arrested for supplying Channel smugglers with nautical equipment</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="Europol">Europol</span>
+          
+          &middot; <span class="reason">La disrupción de la cadena de suministro para embarcaciones del Canal de la Mancha golpea la logística del tráfico de migrantes</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact" data-tag="crimen organizado">
+        <div class="card-header">
+          <span class="tag">crimen organizado</span>
+          
+        </div>
+        <h2>
+          <a href="https://www.europol.europa.eu/media-press/newsroom/news/five-country-operation-targets-cigarette-smuggling-network-operating-uk" target="_blank" rel="noopener">Five-country operation targets cigarette smuggling network operating from the UK</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="Europol">Europol</span>
+          
+          &middot; <span class="reason">La operación multinacional contra el contrabando de cigarrillos desde Reino Unido expone rutas transcontinentales</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact card-high" data-tag="cooperación internacional">
+        <div class="card-header">
+          <span class="tag">cooperación internacional</span>
+          <span class="relevance-badge">alta</span>
+        </div>
+        <h2>
+          <a href="https://www.europol.europa.eu/media-press/newsroom/news/grip-migrant-smuggling-tightens-new-department-europol-to-step-fight" target="_blank" rel="noopener">The grip on migrant smuggling tightens: new department at Europol to step up the fight</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="Europol">Europol</span>
+          
+          &middot; <span class="reason">El nuevo Centro Europeo contra el Tráfico de Migrantes intensifica la respuesta institucional de la UE</span>
+        </p>
+      </article>
+      
+      <article class="card card-compact" data-tag="cooperación internacional">
+        <div class="card-header">
+          <span class="tag">cooperación internacional</span>
+          
+        </div>
+        <h2>
+          <a href="https://globalinitiative.net/announcements/gitoc-uruguay-ministry-interior-cooperation-framework-democratic-security-organized-crime/" target="_blank" rel="noopener">GI‑TOC and Uruguay’s Ministry of the Interior establish new cooperation framework to advance democratic security and regional responses to organized crime</a>
+        </h2>
+        <p class="source-reason">
+          <span class="src-label" data-source="GI-TOC">GI-TOC</span>
+           &middot; Claudio Landi
+          &middot; <span class="reason">El marco de cooperación GI-TOC-Uruguay fortalece las respuestas regionales al crimen organizado en América Latina</span>
+        </p>
+      </article>
+      
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>securityme &middot; monitor de seguridad curado con Claude</p>
+  </footer>
+
+  <script>
+  // Build tag filter from actual tags on page
+  (function() {
+    const tags = new Set();
+    document.querySelectorAll('.card[data-tag]').forEach(c => tags.add(c.dataset.tag));
+    const bar = document.getElementById('tagFilter');
+    [...tags].sort().forEach(tag => {
+      const btn = document.createElement('button');
+      btn.className = 'tag-btn';
+      btn.dataset.tag = tag;
+      btn.textContent = tag;
+      btn.onclick = () => filterTag(tag);
+      bar.appendChild(btn);
+    });
+  })();
+
+  function filterTag(tag) {
+    document.querySelectorAll('.tag-btn').forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+    document.querySelectorAll('.card[data-tag]').forEach(card => {
+      card.style.display = (tag === 'all' || card.dataset.tag === tag) ? '' : 'none';
+    });
+  }
+
+  function toggleAudio() {
+    const audio = document.getElementById('briefingAudio');
+    const btn = document.getElementById('playBtn');
+    if (!audio) return;
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = 'Pausar';
+    } else {
+      audio.pause();
+      btn.textContent = 'Escuchar';
+    }
+    audio.onended = () => { btn.textContent = 'Escuchar'; };
+  }
+  </script>
+</body>
 </html>
