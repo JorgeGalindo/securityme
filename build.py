@@ -6,6 +6,7 @@ import shutil
 from datetime import datetime, timezone
 
 from jinja2 import Environment, FileSystemLoader
+from sources import FEEDS_EUROPE, FEEDS_SPAIN
 
 ROOT = pathlib.Path(__file__).parent
 DATA_DIR = ROOT / "data"
@@ -73,9 +74,79 @@ def build():
     )
     (OUTPUT_DIR / "espana.html").write_text(html)
 
+    # Build sources list with descriptions
+    europe_descs = {
+        "GI-TOC": "Crimen organizado transnacional",
+        "OCCRP": "Periodismo de investigación — corrupción y crimen",
+        "InSight Crime": "Crimen organizado en las Américas",
+        "RUSI": "Seguridad y defensa (UK)",
+        "Chatham House": "Política internacional (UK)",
+        "Carnegie Europe": "Política europea",
+        "ECFR": "Política exterior europea",
+        "IISS": "Seguridad estratégica",
+        "SIPRI": "Paz y conflictos armados (Suecia)",
+        "Crisis Group": "Análisis de conflictos",
+        "Clingendael": "Seguridad europea (Países Bajos)",
+        "TNI": "Política de drogas (Países Bajos)",
+        "IDPC": "Consorcio internacional de política de drogas",
+        "Brookings": "Políticas públicas (EEUU)",
+        "CEPS": "Política europea (Bruselas)",
+        "EMCDDA/EUDA": "Agencia UE — observatorio de drogas",
+        "Europol": "Agencia UE — policía",
+        "EUISS": "Instituto UE — estudios de seguridad",
+        "Frontex": "Agencia UE — fronteras",
+        "ENISA": "Agencia UE — ciberseguridad",
+        "EC Home Affairs": "Comisión Europea — asuntos de interior",
+        "EC Justice": "Comisión Europea — justicia",
+        "EC Security Union": "Comisión Europea — unión de seguridad",
+        "SWP (EN)": "Think tank alemán — publicaciones",
+        "SWP (all)": "Think tank alemán — todo el contenido",
+        "DCAF": "Gobernanza del sector seguridad (Ginebra)",
+        "Small Arms Survey (Medium)": "Armas pequeñas y violencia armada",
+        "RAND Research Reports": "Informes de investigación RAND",
+        "RAND Commentary": "Análisis y comentarios RAND",
+        "Drug Policy Alliance": "Reforma de política de drogas (EEUU)",
+        "Transform Drug Policy (blog)": "Reforma de política de drogas (UK)",
+        "Harm Reduction International": "Reducción de daños global",
+        "Release (UK)": "Política de drogas y derecho (UK)",
+        "Financial Transparency Coalition": "Transparencia financiera y flujos ilícitos",
+    }
+    spain_descs = {
+        "El País (España)": "Prensa — sección España",
+        "El Confidencial": "Prensa — investigación",
+        "El Mundo": "Prensa — España",
+        "eldiario.es": "Prensa — política",
+        "La Vanguardia (Política)": "Prensa — política",
+        "La Vanguardia (Internacional)": "Prensa — internacional",
+        "La Vanguardia (Sucesos)": "Prensa — sucesos",
+        "ABC": "Prensa — portada",
+        "Real Instituto Elcano": "Think tank — relaciones internacionales",
+        "CIDOB": "Think tank — Barcelona",
+        "IEEE": "Instituto de estudios estratégicos (Defensa)",
+        "Fundación Alternativas": "Think tank — políticas públicas",
+    }
+
+    europe_sources = [
+        (name, url, europe_descs.get(name, ""))
+        for name, url in FEEDS_EUROPE.items()
+    ]
+    spain_sources = [
+        (name, url, spain_descs.get(name, ""))
+        for name, url in FEEDS_SPAIN.items()
+    ]
+
+    # Render Fuentes page
+    template = env.get_template("fuentes.html")
+    html = template.render(
+        europe_sources=europe_sources,
+        spain_sources=spain_sources,
+    )
+    (OUTPUT_DIR / "fuentes.html").write_text(html)
+
     print(f"Built static site in {OUTPUT_DIR}/")
     print(f"  Europa: {len(europe_data.get('articles', []))} articles")
     print(f"  España: {len(spain_data.get('articles', []))} articles")
+    print(f"  Fuentes: {len(europe_sources)} EU + {len(spain_sources)} ES")
     print(f"  Audio: {'yes' if has_audio else 'no'}")
 
 

@@ -95,9 +95,15 @@ NO PRIORICES:
 ARTÍCULOS ({len(articles)}):
 {articles_text}
 
+TONO DE LAS FRASES DE ANÁLISIS:
+- Factual, no editorial. Describe lo que ocurre y por qué importa, no lo que debería ocurrir.
+- Ligeramente crítica: señala limitaciones del enfoque, ángulos que la fuente omite, o tensiones entre lo que se dice y lo que se hace.
+- Ej: "La incautación récord en Amberes no altera la tendencia: el volumen total sigue creciendo pese al aumento de operaciones"
+- Ej: "El informe de Europol cuantifica redes pero no aborda los incentivos estructurales que las sostienen"
+
 Para cada seleccionado:
 - index: el [N] original
-- analysis_es: UNA frase analítica (no descriptiva). Ej: "La ruta balcánica consolida su papel como segundo corredor de cocaína hacia la UE"
+- analysis_es: UNA frase factual con perspectiva crítica (no descriptiva, no editorial)
 - tag: DEBE ser una de estas exactamente: {", ".join(TAGS)}
 - relevance: "alta" o "media" (para priorizar visualmente)
 
@@ -179,9 +185,15 @@ NO PRIORICES:
 ARTÍCULOS ({len(articles)}):
 {articles_text}
 
+TONO DE LAS FRASES DE ANÁLISIS:
+- Factual, no editorial. Describe lo que ocurre y por qué importa, no lo que debería ocurrir.
+- Ligeramente crítica: señala limitaciones del enfoque, ángulos que la fuente omite, o tensiones entre lo que se dice y lo que se hace.
+- Ej: "La operación en el Campo de Gibraltar se presenta como éxito pero no aborda la reposición inmediata de rutas"
+- Ej: "Elcano advierte sobre narco en puertos pero no cuantifica la capacidad real de inspección"
+
 Para cada seleccionado:
 - index: el [N] original
-- analysis_es: UNA frase analítica (no descriptiva, con lente de seguridad)
+- analysis_es: UNA frase factual con perspectiva crítica (no descriptiva, no editorial)
 - tag: DEBE ser una de estas exactamente: {", ".join(TAGS)}
 - relevance: "alta" o "media"
 
@@ -243,12 +255,12 @@ MONITOR ESPAÑA — SEGURIDAD:
 {chr(10).join(spain_lines) if spain_lines else "Sin artículos hoy."}
 
 INSTRUCCIONES:
-- Tono: analista de seguridad haciendo un briefing matutino. Profesional, precisa, sin sensacionalismo.
-- Perspectiva: la de una experta en política de drogas y crimen organizado transnacional, con enfoque en reformas basadas en evidencia y derechos humanos.
+- Tono: factual y sobrio. NO editorial. Reporta lo que hay, no lo que debería haber. Como un parte de situación, no un artículo de opinión.
+- Perspectiva ligeramente crítica: cuando una fuente presenta algo como éxito o avance, señala brevemente qué omite, qué limitaciones tiene, o qué contexto falta. No con cinismo — con rigor.
 - Estructura: empieza con las señales más importantes del panorama europeo, luego España, conectando cuando tenga sentido.
 - Distingue entre informes/análisis de think tanks (más peso analítico) y noticias de prensa (más peso informativo).
 - Conecta las noticias entre sí cuando tenga sentido (ej: "esto se vincula con..." o "en paralelo...").
-- Cierra con una valoración general: ¿qué tendencias se consolidan? ¿qué merece seguimiento?
+- Cierra con una valoración general factual: ¿qué tendencias se consolidan? ¿qué merece seguimiento? Sin recomendar.
 - Longitud: ~800-1200 palabras (para ~4 minutos de audio).
 - Idioma: español.
 - NO uses encabezados, asteriscos, guiones ni ningún formato. Solo texto corrido con párrafos."""

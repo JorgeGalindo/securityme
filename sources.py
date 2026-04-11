@@ -19,10 +19,31 @@ FEEDS_EUROPE = {
     "IDPC": "https://idpc.net/feed",
     "Brookings": "https://www.brookings.edu/feed/",
     "CEPS": "https://www.ceps.eu/feed/",
-    # EU agencies
+    # EU agencies & international organisations
     "EMCDDA/EUDA": "https://www.emcdda.europa.eu/rss.xml",
     "Europol": "https://www.europol.europa.eu/rss.xml",
     "EUISS": "https://www.iss.europa.eu/rss",
+    "Frontex": "https://frontex.europa.eu/media-centre/news/news-release/feed",
+    "ENISA": "https://www.enisa.europa.eu/rss.xml",
+    "EC Home Affairs": "https://ec.europa.eu/commission/presscorner/api/rss?language=en&field=home-affairs",
+    "EC Justice": "https://ec.europa.eu/commission/presscorner/api/rss?language=en&field=justice",
+    "EC Security Union": "https://ec.europa.eu/commission/presscorner/api/rss?language=en&field=security-union",
+    # German & European think tanks
+    "SWP (EN)": "https://www.swp-berlin.org/en/SWPPublications.xml",
+    "SWP (all)": "https://www.swp-berlin.org/en/rss.xml",
+    # Geneva-based security research
+    "DCAF": "https://www.dcaf.ch/rss.xml",
+    "Small Arms Survey (Medium)": "https://smallarmssurvey.medium.com/feed",
+    # RAND Corporation
+    "RAND Research Reports": "https://www.rand.org/pubs/research_reports.xml",
+    "RAND Commentary": "https://www.rand.org/blog.xml",
+    # Drug policy & harm reduction
+    "Drug Policy Alliance": "https://drugpolicy.org/feed/",
+    "Transform Drug Policy (blog)": "http://transform-drugs.blogspot.com/feeds/posts/default",
+    "Harm Reduction International": "https://hri.global/feed/",
+    "Release (UK)": "https://www.release.org.uk/rss.xml",
+    # Transparency & financial crime
+    "Financial Transparency Coalition": "https://financialtransparency.org/feed/",
 }
 
 # Security-relevant keywords to filter general feeds
@@ -55,10 +76,15 @@ FEEDS_SPAIN = {
     "El Confidencial": "https://rss.elconfidencial.com/espana/",
     "El Mundo": "https://e00-elmundo.uecdn.es/elmundo/rss/espana.xml",
     "eldiario.es": "https://www.eldiario.es/rss/politica/",
-    # Think tanks
+    "La Vanguardia (Política)": "https://www.lavanguardia.com/rss/politica.xml",
+    "La Vanguardia (Internacional)": "https://www.lavanguardia.com/rss/internacional.xml",
+    "La Vanguardia (Sucesos)": "https://www.lavanguardia.com/rss/sucesos.xml",
+    "ABC": "https://www.abc.es/rss/feeds/abcPortada.xml",
+    # Think tanks & research
     "Real Instituto Elcano": "https://www.realinstitutoelcano.org/feed/",
     "CIDOB": "https://www.cidob.org/es/publicaciones/rss",
     "IEEE": "https://www.ieee.es/rss/",
+    "Fundación Alternativas": "https://www.fundacionalternativas.org/feed",
 }
 
 # Keywords to filter Spanish media for security-relevant content

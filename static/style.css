@@ -339,6 +339,61 @@ main {
   .src-label[data-source="eldiario.es"] { color: #94C8E8; }
 }
 
+/* Fuentes page */
+
+.fuentes-intro {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.fuente-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 16px;
+}
+
+.fuente-row:last-child {
+  border-bottom: none;
+}
+
+.fuente-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.fuente-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.fuentes-missing-intro {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.fuentes-missing {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+section {
+  margin-bottom: 32px;
+}
+
 /* Footer */
 
 footer {
